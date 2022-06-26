@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    WTW
+{% endblock %}
+{% block body %}
+<div>
+    <form action="/answer" method="POST">
+        <input name="niveau" type="text" placeholder="Niveau">
+        <input name="set" type="text" placeholder="Set">
+        <select name="how">
+            <option value="d2w">Engels - Description to word</option>
+            <option value="gapsentences">Engels - Gap sentences</option>
+        </select>
+        <button type="submit">Submit</button>
+    </form>
+</div>
+{% endblock %}

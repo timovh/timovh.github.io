@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block title %}
+    Answers
+{% endblock %}
+{% block script %}
+<script src="{{url_for('static', filename='main.js')}}"></script>
+{% endblock %}
+{% block body %}
+<input id="myInput" onkeyup="searchTable()" type="text" placeholder="Search...">
+<div class="tableDiv">
+    <table id="myTable">
+        <tr id="tableHeader">
+            <th>Question</th>
+            <th>Answer</th>
+        </tr>
+        {% for i in answers %}
+        <tr>
+            <td class="left-col">{{i['question']}}</td>
+            <td class="right-col">{{i['answer']}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+<a href="/">Go back to Home</a>
+<div class="divTest"></div>
+{% endblock %}
